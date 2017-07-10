@@ -18,7 +18,7 @@
     "url": "git+https://github.com/pubkey/async-test-util.git"
   },
   "author": "pubkey",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/pubkey/async-test-util/issues"
   },
