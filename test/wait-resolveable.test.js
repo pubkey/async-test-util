@@ -10,7 +10,6 @@ describe('wait-resolveable.test.js', () => {
         let resolved = null;
         const waiter = AsyncTestUtil.waitResolveable(10000);
         waiter.promise.then(x => {
-            console.log('res!!!: ' + x);
             resolved = x;
         });
         waiter.resolve('foobar');
