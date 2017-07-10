@@ -46,7 +46,8 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "cross-env": "^5.0.1",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "rimraf": "^2.6.1"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
