@@ -63,7 +63,7 @@ it('should wait until server is online', async() => {
 With timeout:
 
 ```javascript
-it('should until server is online (maxtime: 1000ms)', async() => {
+it('should wait until server is online (maxtime: 1000ms)', async() => {
     const checkServer = async() => {
         try{
             await fetch('http://example.com/api/');
