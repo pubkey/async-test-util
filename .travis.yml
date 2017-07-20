@@ -4,4 +4,8 @@ os:
   - osx
 node_js:
   - "7"
-script: npm install && npm run build && npm test
+script:
+- npm install
+- npm run lint
+- npm run build
+- npm test

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.wait = exports.waitUntil = exports.waitResolveable = exports.deepEqual = exports.clone = exports.assertThrows = undefined;
+exports.runForever = exports.waitForever = exports.wait = exports.waitUntil = exports.waitResolveable = exports.deepEqual = exports.clone = exports.assertThrows = undefined;
 
 var _assertThrows = require('./assert-throws');
 
@@ -29,6 +29,14 @@ var _wait = require('./wait');
 
 var _wait2 = _interopRequireDefault(_wait);
 
+var _waitForever = require('./wait-forever');
+
+var _waitForever2 = _interopRequireDefault(_waitForever);
+
+var _runForever = require('./run-forever');
+
+var _runForever2 = _interopRequireDefault(_runForever);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var AsyncTestUtil = {
@@ -37,7 +45,9 @@ var AsyncTestUtil = {
     deepEqual: _deepEqual2['default'],
     waitResolveable: _waitResolveable2['default'],
     waitUntil: _waitUntil2['default'],
-    wait: _wait2['default']
+    wait: _wait2['default'],
+    waitForever: _waitForever2['default'],
+    runForever: _runForever2['default']
 };
 exports['default'] = AsyncTestUtil;
 exports.assertThrows = _assertThrows2['default'];
@@ -46,3 +56,5 @@ exports.deepEqual = _deepEqual2['default'];
 exports.waitResolveable = _waitResolveable2['default'];
 exports.waitUntil = _waitUntil2['default'];
 exports.wait = _wait2['default'];
+exports.waitForever = _waitForever2['default'];
+exports.runForever = _runForever2['default'];

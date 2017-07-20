@@ -4,6 +4,8 @@ import deepEqual from './deep-equal';
 import waitResolveable from './wait-resolveable';
 import waitUntil from './wait-until';
 import wait from './wait';
+import waitForever from './wait-forever';
+import runForever from './run-forever';
 
 const AsyncTestUtil = {
     assertThrows,
@@ -11,7 +13,9 @@ const AsyncTestUtil = {
     deepEqual,
     waitResolveable,
     waitUntil,
-    wait
+    wait,
+    waitForever,
+    runForever
 };
 export default AsyncTestUtil;
 
@@ -21,5 +25,7 @@ export {
     deepEqual,
     waitResolveable,
     waitUntil,
-    wait
+    wait,
+    waitForever,
+    runForever
 };

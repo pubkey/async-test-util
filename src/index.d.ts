@@ -27,6 +27,22 @@ export function waitUntil(predicate: Function, timeout?: number, interval?: numb
 
 
 /**
+ * runs the given predicate-function forever
+ * @param  {Function}      predicate
+ * @param  {number}        [interval=100] interval-time in ms (optional)
+ * @return {Promise<void>} never resolves
+ */
+export function runForever(predicate: Function, interval?: number): Promise<void>;
+
+
+/**
+ * waits forever
+ * @return {Promise<void>}
+ */
+export function waitForever(): Promise<void>;
+
+
+/**
  * async version of assert.throws
  * @param  {Function}      fun      which should throw
  * @param  {any}           error    error-type (TypeError, Error or string)

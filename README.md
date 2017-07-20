@@ -76,6 +76,42 @@ it('should wait until server is online (maxtime: 1000ms)', async() => {
 });
 ```
 
+## waitForever()
+
+Waits forever, never resolves.
+
+```javascript
+it('should never resolve', async() => {
+    let resolved = false;
+    AsyncTestUtil
+        .waitForever()
+        .then(() => resolved = true);
+    await AsyncTestUtil.wait(100);
+    assert.equal(false, resolved);
+});
+```
+
+## runForever()
+
+Runs the given predicate-function forever. Between each run, the interval-time is awaited.
+
+```javascript
+it('should run forever', async() => {
+    let t = 0;
+    const pred = () => t++;
+    AsyncTestUtil.runForever(
+        pred, // predicate-function
+        10    // interval
+     );
+
+    await AsyncTestUtil.wait(100);
+    assert.ok(t > 4);
+    const lastT = t;
+    await AsyncTestUtil.wait(100);
+    assert.ok(t > lastT);
+});
+```
+
 ## assertThrows()
 
 Async-Form of [assert.throws](https://nodejs.org/api/assert.html#assert_assert_throws_block_error_message). Asserts that the given function throws with the defined error, throws if not.
