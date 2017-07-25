@@ -71,3 +71,15 @@ export function clone (obj: any): any;
  * @return {boolean}     true/false
  */
 export function deepEqual (obj1: any, obj2: any): boolean;
+
+
+export default {
+    assertThrows,
+    clone,
+    deepEqual,
+    waitResolveable,
+    waitUntil,
+    wait,
+    waitForever,
+    runForever    
+};
