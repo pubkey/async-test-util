@@ -1,5 +1,7 @@
 # async-test-util
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pubkey/async-test-util.svg)](https://greenkeeper.io/)
+
 Utility-functions that can be usefull when you have asynchronous tests in javascript.
 
 ## Installation
