@@ -81,6 +81,14 @@ export function deepEqual(obj1: any, obj2: any): boolean;
  */
 export function randomString(length?: number, charset?: string): string;
 
+/**
+ * creates a random number
+ * @param  {number} [min=0] min value (inclusive)
+ * @param  {number} [max=1000] max value (inclusive)
+ * @return {number}
+ */
+export function randomNumber(length?: number, charset?: string): string;
+
 export default {
     assertThrows,
     clone,
@@ -90,5 +98,6 @@ export default {
     wait,
     waitForever,
     runForever,
-    randomString
+    randomString,
+    randomNumber
 };

@@ -163,7 +163,23 @@ console.log(AsyncTestUtil.randomString(
     'abc' // (optional) charset, only this will be used to create the string
 ));
 // > 'acbcba'
+```
 
+
+## randomNumber()
+
+Creates a random number. Optional range can be given.
+
+```javascript
+
+console.log(AsyncTestUtil.randomNumber());
+// > 56
+
+console.log(AsyncTestUtil.randomNumber(
+    1000, // min-value (default=0)
+    2000 // max-value (default=1000)
+));
+// > 1768
 
 ```
 

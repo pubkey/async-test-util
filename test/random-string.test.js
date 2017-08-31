@@ -13,7 +13,6 @@ describe('random-string.test.js', () => {
     it('should use the given charset', () => {
         const str = AsyncTestUtil.randomString(5, 'a');
         assert.equal(str, 'aaaaa');
-        console.dir(AsyncTestUtil.randomString(6, 'abc'));
     });
 
 });
