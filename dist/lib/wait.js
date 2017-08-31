@@ -24,7 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @return {Promise}
  */
 exports["default"] = function () {
-  var _ref = (0, _asyncToGenerator3["default"])(_regenerator2["default"].mark(function _callee() {
+  var _ref = (0, _asyncToGenerator3["default"])( /*#__PURE__*/_regenerator2["default"].mark(function _callee() {
     var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
     return _regenerator2["default"].wrap(function _callee$(_context) {
       while (1) {

@@ -6,6 +6,8 @@ import waitUntil from './wait-until';
 import wait from './wait';
 import waitForever from './wait-forever';
 import runForever from './run-forever';
+import randomString from './random-string';
+import randomNumber from './random-number';
 
 var AsyncTestUtil = {
     assertThrows: assertThrows,
@@ -15,8 +17,10 @@ var AsyncTestUtil = {
     waitUntil: waitUntil,
     wait: wait,
     waitForever: waitForever,
-    runForever: runForever
+    runForever: runForever,
+    randomString: randomString,
+    randomNumber: randomNumber
 };
 export default AsyncTestUtil;
 
-export { assertThrows, clone, deepEqual, waitResolveable, waitUntil, wait, waitForever, runForever };
+export { assertThrows, clone, deepEqual, waitResolveable, waitUntil, wait, waitForever, runForever, randomString, randomNumber };

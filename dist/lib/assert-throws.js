@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  * @return {Promise}       [description]
  */
 exports['default'] = function () {
-    var _ref = (0, _asyncToGenerator3['default'])(_regenerator2['default'].mark(function _callee(test) {
+    var _ref = (0, _asyncToGenerator3['default'])( /*#__PURE__*/_regenerator2['default'].mark(function _callee(test) {
         var error = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Error;
         var contains = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
         var shouldErrorName;

@@ -3,7 +3,7 @@ import _asyncToGenerator from 'babel-runtime/helpers/asyncToGenerator';
 import wait from './wait';
 
 export default (function () {
-    var _ref = _asyncToGenerator(_regeneratorRuntime.mark(function _callee(predicate) {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(predicate) {
         var interval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
         var t;
         return _regeneratorRuntime.wrap(function _callee$(_context) {

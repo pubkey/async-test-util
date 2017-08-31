@@ -19,7 +19,7 @@ var _wait2 = _interopRequireDefault(_wait);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 exports['default'] = function () {
-    var _ref = (0, _asyncToGenerator3['default'])(_regenerator2['default'].mark(function _callee(predicate) {
+    var _ref = (0, _asyncToGenerator3['default'])( /*#__PURE__*/_regenerator2['default'].mark(function _callee(predicate) {
         var interval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
         var t;
         return _regenerator2['default'].wrap(function _callee$(_context) {

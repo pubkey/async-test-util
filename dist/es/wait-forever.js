@@ -8,7 +8,7 @@ import wait from './wait';
  * @return {Promise}
  */
 export default (function () {
-  var _ref = _asyncToGenerator(_regeneratorRuntime.mark(function _callee(fun) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(fun) {
     var timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
     var interval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 20;
     return _regeneratorRuntime.wrap(function _callee$(_context) {

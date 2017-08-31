@@ -1,6 +1,6 @@
 {
   "name": "async-test-util",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Util-functions that are be useful in async tests",
   "main": "./dist/lib/index.js",
   "jsnext:main": "./dist/es/index.js",
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/pubkey/async-test-util#readme",
   "devDependencies": {
     "assert": "1.4.1",
-    "babel-cli": "6.24.1",
+    "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-loader": "7.1.2",

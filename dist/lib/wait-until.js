@@ -24,7 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  * @return {Promise}
  */
 exports['default'] = function () {
-    var _ref = (0, _asyncToGenerator3['default'])(_regenerator2['default'].mark(function _callee2(fun) {
+    var _ref = (0, _asyncToGenerator3['default'])( /*#__PURE__*/_regenerator2['default'].mark(function _callee2(fun) {
         var _this = this;
 
         var timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
@@ -39,7 +39,7 @@ exports['default'] = function () {
 
 
                         if (timeout !== 0) {
-                            (0, _asyncToGenerator3['default'])(_regenerator2['default'].mark(function _callee() {
+                            (0, _asyncToGenerator3['default'])( /*#__PURE__*/_regenerator2['default'].mark(function _callee() {
                                 return _regenerator2['default'].wrap(function _callee$(_context) {
                                     while (1) {
                                         switch (_context.prev = _context.next) {

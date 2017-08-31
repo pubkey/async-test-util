@@ -8,7 +8,7 @@ import _asyncToGenerator from 'babel-runtime/helpers/asyncToGenerator';
  * @return {Promise}       [description]
  */
 export default (function () {
-    var _ref = _asyncToGenerator(_regeneratorRuntime.mark(function _callee(test) {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(test) {
         var error = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Error;
         var contains = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
         var shouldErrorName;
