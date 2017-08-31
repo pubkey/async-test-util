@@ -146,6 +146,27 @@ it('should throw because route does not exist', async() => {
 });
 ```
 
+## randomString()
+
+Creates a random string. Takes length as first parameter an custom charset as second.
+
+```javascript
+
+console.log(AsyncTestUtil.randomString());
+// > 'rhfkx'
+
+console.log(AsyncTestUtil.randomString(10));
+// > 'dhcvkledzu'
+
+console.log(AsyncTestUtil.randomString(
+    6,    // (optional) length
+    'abc' // (optional) charset, only this will be used to create the string
+));
+// > 'acbcba'
+
+
+```
+
 ## clone()
 
 Reference to [clone](https://www.npmjs.com/package/clone). Does exactly the same thing.

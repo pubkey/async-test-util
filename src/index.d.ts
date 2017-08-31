@@ -59,7 +59,7 @@ export function assertThrows(fun: Function, error?: any, contains?: 'string'): P
  * @param  {any} obj [description]
  * @return {any}     [description]
  */
-export function clone (obj: any): any;
+export function clone(obj: any): any;
 
 
 /**
@@ -70,8 +70,16 @@ export function clone (obj: any): any;
  * @param  {any} obj2 [description]
  * @return {boolean}     true/false
  */
-export function deepEqual (obj1: any, obj2: any): boolean;
+export function deepEqual(obj1: any, obj2: any): boolean;
 
+
+/**
+ * creates a random string
+ * @param  {number} [length=5] length of the string
+ * @param  {string} [charset=abcdefghijklmnopqrstuvwxyz]  if given, only this charset will be used
+ * @return {string}
+ */
+export function randomString(length?: number, charset?: string): string;
 
 export default {
     assertThrows,
@@ -81,5 +89,6 @@ export default {
     waitUntil,
     wait,
     waitForever,
-    runForever    
+    runForever,
+    randomString
 };

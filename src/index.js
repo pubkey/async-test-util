@@ -6,6 +6,7 @@ import waitUntil from './wait-until';
 import wait from './wait';
 import waitForever from './wait-forever';
 import runForever from './run-forever';
+import randomString from './random-string';
 
 const AsyncTestUtil = {
     assertThrows,
@@ -15,7 +16,8 @@ const AsyncTestUtil = {
     waitUntil,
     wait,
     waitForever,
-    runForever
+    runForever,
+    randomString
 };
 export default AsyncTestUtil;
 
@@ -27,5 +29,6 @@ export {
     waitUntil,
     wait,
     waitForever,
-    runForever
+    runForever,
+    randomString
 };
