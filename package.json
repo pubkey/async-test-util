@@ -48,7 +48,7 @@
     "babel-preset-latest": "6.24.1",
     "cross-env": "5.0.5",
     "eslint": "^4.3.0",
-    "mocha": "3.5.2",
+    "mocha": "3.5.3",
     "rimraf": "2.6.1"
   },
   "dependencies": {
