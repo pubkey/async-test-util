@@ -88,4 +88,30 @@ describe('assert-throws.test.js', () => {
             'oba'
         );
     });
+    it('compare to custom error', async() => {
+        class CustomError extends Error {
+            constructor(message) {
+                super(message);
+            }
+        }
+
+        const throwingFunction = () => {
+            throw new CustomError('my custom error is thrown');
+        };
+
+        // via class
+        await AsyncTestUtil.assertThrows(
+            () => throwingFunction(),
+            CustomError,
+            'custom'
+        );
+
+        // via class-name
+        await AsyncTestUtil.assertThrows(
+            () => throwingFunction(),
+            'CustomError',
+            'custom'
+        );
+
+    });
 });
