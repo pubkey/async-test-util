@@ -7,7 +7,7 @@
   "module": "./dist/es/index.js",
   "types": "./src/index.d.ts",
   "scripts": {
-    "test": "npm run build && mocha -b",
+    "test": "npm run build && mocha -b --exit",
     "lint": "eslint src test",
     "clear": "rimraf -rf ./dist",
     "build:es6": "rimraf -rf dist/es && cross-env NODE_ENV=es6 babel src --out-dir dist/es",
@@ -47,12 +47,12 @@
     "babel-preset-es2017": "6.24.1",
     "babel-preset-latest": "6.24.1",
     "cross-env": "5.0.5",
-    "eslint": "^4.3.0",
-    "rimraf": "2.6.2",
-    "mocha": "3.5.3"
+    "eslint": "4.8.0",
+    "mocha": "4.0.1",
+    "rimraf": "2.6.2"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0",
+    "babel-runtime": "6.26.0",
     "clone": "^2.1.1",
     "deep-equal": "^1.0.1"
   }
