@@ -47,7 +47,7 @@
     "babel-preset-es2017": "6.24.1",
     "babel-preset-latest": "6.24.1",
     "cross-env": "5.1.0",
-    "eslint": "4.9.0",
+    "eslint": "4.10.0",
     "mocha": "4.0.1",
     "rimraf": "2.6.2"
   },
