@@ -89,7 +89,7 @@ export function randomString(length?: number, charset?: string): string;
  */
 export function randomNumber(length?: number, charset?: string): string;
 
-export default {
+declare const _default: {
     assertThrows,
     clone,
     deepEqual,
@@ -101,3 +101,5 @@ export default {
     randomString,
     randomNumber
 };
+
+export default _default;
