@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.randomNumber = exports.randomString = exports.runForever = exports.waitForever = exports.wait = exports.waitUntil = exports.waitResolveable = exports.deepEqual = exports.clone = exports.assertThrows = undefined;
+exports.resolveValues = exports.randomNumber = exports.randomString = exports.runForever = exports.waitForever = exports.wait = exports.waitUntil = exports.waitResolveable = exports.deepEqual = exports.clone = exports.assertThrows = undefined;
 
 var _assertThrows = require('./assert-throws');
 
@@ -45,6 +45,10 @@ var _randomNumber = require('./random-number');
 
 var _randomNumber2 = _interopRequireDefault(_randomNumber);
 
+var _resolveValues = require('./resolve-values');
+
+var _resolveValues2 = _interopRequireDefault(_resolveValues);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var AsyncTestUtil = {
@@ -57,7 +61,8 @@ var AsyncTestUtil = {
     waitForever: _waitForever2['default'],
     runForever: _runForever2['default'],
     randomString: _randomString2['default'],
-    randomNumber: _randomNumber2['default']
+    randomNumber: _randomNumber2['default'],
+    resolveValues: _resolveValues2['default']
 };
 exports['default'] = AsyncTestUtil;
 exports.assertThrows = _assertThrows2['default'];
@@ -70,3 +75,4 @@ exports.waitForever = _waitForever2['default'];
 exports.runForever = _runForever2['default'];
 exports.randomString = _randomString2['default'];
 exports.randomNumber = _randomNumber2['default'];
+exports.resolveValues = _resolveValues2['default'];
