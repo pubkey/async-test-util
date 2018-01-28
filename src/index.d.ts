@@ -51,6 +51,16 @@ export function waitForever(): Promise<void>;
  */
 export function assertThrows(fun: Function, error?: any, contains?: 'string'): Promise<void>;
 
+/**
+ * Recieves an object with promises as values. Returns ans object with the resolved promises as values.
+ * @param  {Object}      obj      with promises as values
+ * @return {Promise<Object>} with resolved values
+ */
+type ResolveValuesParam = {
+    [key: string]: Promise<any> | any
+}
+export function resolveValues(obj: ResolveValuesParam): Promise<ResolveValuesParam>;
+
 
 /**
  * deep-clones the given object

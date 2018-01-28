@@ -146,6 +146,32 @@ it('should throw because route does not exist', async() => {
 });
 ```
 
+## resolveValues()
+
+Recieves an object with promises as values. Returns ans object with the resolved promises as values.
+Use this in test-setups to improve the test-speed by running everything in parallel.
+
+```javascript
+
+// instead of this
+const database = await connectDatabase();
+const user1 = await getUser();
+const user2 = await getUser();
+
+// do this
+const {
+    database,
+    user1,
+    user2
+} = await AsyncTestUtil.resolveValues({
+    database: connectDatabase();
+    user1: getUser();
+    user2: getUser();
+});
+
+```
+
+
 ## randomString()
 
 Creates a random string. Takes length as first parameter an custom charset as second.
