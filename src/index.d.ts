@@ -61,6 +61,16 @@ type ResolveValuesParam = {
 }
 export function resolveValues(obj: ResolveValuesParam): Promise<ResolveValuesParam>;
 
+/**
+ * returns true if a promise was given
+ */
+export function isPromise(maybePromise: any): boolean;
+
+/**
+ * transforms the given value to a promise
+ * if it was no promise before
+ */
+export function promisify(maybePromise: any): Promise<any>;
 
 /**
  * deep-clones the given object

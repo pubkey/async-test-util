@@ -31,8 +31,8 @@
         "transform-async-to-generator",
         "transform-regenerator",
         ["transform-runtime", {
-            "polyfill": true,
-            "regenerator": true
+            "polyfill": false,
+            "regenerator": false
         }]
     ],
     "env": {

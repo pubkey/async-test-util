@@ -9,6 +9,8 @@ import runForever from './run-forever';
 import randomString from './random-string';
 import randomNumber from './random-number';
 import resolveValues from './resolve-values';
+import isPromise from './is-promise';
+import promisify from './promisify';
 
 const AsyncTestUtil = {
     assertThrows,
@@ -21,7 +23,9 @@ const AsyncTestUtil = {
     runForever,
     randomString,
     randomNumber,
-    resolveValues
+    resolveValues,
+    isPromise,
+    promisify
 };
 export default AsyncTestUtil;
 
@@ -36,5 +40,7 @@ export {
     runForever,
     randomString,
     randomNumber,
-    resolveValues
+    resolveValues,
+    isPromise,
+    promisify
 };

@@ -184,6 +184,29 @@ const {
 });
 ```
 
+## isPromise()
+Returns true if the given value is a `Promise`;
+
+```javascript
+
+const is = AsyncTestUtil.isPromise(myAsyncFunction()); // true
+const is = AsyncTestUtil.isPromise('foobar'); // false
+
+```
+
+## promisify
+
+Transforms the given value to a promise if it was no promise before.
+
+``` javascript
+
+const ensurePromise = AsyncTestUtil.isPromise(maybeAsyncFunction());
+
+// now you are sure this is a promise
+ensurePromise.then(/* ... */)
+
+```
+
 ## randomString()
 
 Creates a random string. Takes length as first parameter an custom charset as second.

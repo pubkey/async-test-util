@@ -3,7 +3,7 @@ const AsyncTestUtil = require('../dist/lib/index');
 
 
 describe('wait-until.test.js', () => {
-    it('should wait until function returns true', async() => {
+    it('should wait until function returns true', async () => {
         let x = 0;
         const fun = function() {
             x = x + 1;
@@ -11,7 +11,16 @@ describe('wait-until.test.js', () => {
         };
         await AsyncTestUtil.waitUntil(fun);
     });
-    it('should throw if timeout is over', async() => {
+    it('should wait until async-function returns true', async () => {
+        let x = 0;
+        const fun = async () => {
+            await AsyncTestUtil.wait(10);
+            x++;
+            if (x > 5) return true;
+        };
+        await AsyncTestUtil.waitUntil(fun);
+    });
+    it('should throw if timeout is over', async () => {
         const fun = function() {
             return false;
         };
@@ -21,7 +30,7 @@ describe('wait-until.test.js', () => {
             'timeout'
         );
     });
-    it('should not throw because timeout not reached', async() => {
+    it('should not throw because timeout not reached', async () => {
         let x = 0;
         const fun = function() {
             x = x + 1;

@@ -12,6 +12,15 @@ describe('assert-throws.test.js', () => {
             Error
         );
     });
+    it('valid if non-async-function throws', async () => {
+        const test = function() {
+            throw new Error('foo');
+        };
+        await AsyncTestUtil.assertThrows(
+            test,
+            Error
+        );
+    });
     it('throw if function does not throw', async () => {
         const test = async function() {
             await AsyncTestUtil.wait(1);

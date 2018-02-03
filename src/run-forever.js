@@ -1,11 +1,16 @@
 import wait from './wait';
+import promisify from './promisify';
 
-export default async function runForever(predicate, interval = 100) {
+export default function runForever(predicate, interval = 100) {
     let t = 1; // trick optimizers
-    while (t > 0) {
-        await predicate();
-        await wait(interval);
-        t++;
-    }
-    return;
+    return new Promise(res => {
+        const runLoop = () => {
+            t++;
+            const val = promisify(predicate());
+            val
+                .then(() => wait(interval))
+                .then(() => runLoop());
+        };
+        runLoop();
+    });
 }
