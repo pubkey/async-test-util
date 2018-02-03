@@ -31,7 +31,7 @@ export default async function assertThrows(test, error = Error, contains = '') {
              `);
         }
         // all is ok
-        return 'util.assertThrowsAsync(): everything is fine';
+        return e;
     }
     throw new Error(
         'util.assertThrowsAsync(): Missing rejection' +

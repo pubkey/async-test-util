@@ -49,7 +49,7 @@ export function waitForever(): Promise<void>;
  * @param  {string}      contains   the thrown error must contain this string
  * @return {Promise<void>}
  */
-export function assertThrows(fun: Function, error?: any, contains?: 'string'): Promise<void>;
+export function assertThrows(fun: Function, error?: any, contains?: 'string'): Promise<Error | TypeError>;
 
 /**
  * Recieves an object with promises as values. Returns ans object with the resolved promises as values.

@@ -144,12 +144,26 @@ it('should throw because route does not exist', async() => {
         'reachable'               // text-flag, throw if error-message does not include this (optional)  
     );
 });
+
+// assertThrows returns the error
+it('should have the custom error-property', async() => {
+    const throwingFunction = async()=>{
+        const error = new Error('error message');
+        error.foo = 'bar';
+        throw error;
+    }
+    const thrown = await AsyncTestUtil.assertThrows(
+        () => pingServer(),       // function that throws                                    (required)
+        Error,                    // Error-type                                              (optional)
+        'message'               // text-flag, throw if error-message does not include this (optional)  
+    );
+    assert.equal(thrown.foo, 'bar');
+});
 ```
 
 ## resolveValues()
 
-Recieves an object with promises as values. Returns ans object with the resolved promises as values.
-Use this in test-setups to improve the test-speed by running everything in parallel.
+Recieves an object with promises as values. Returns ans object with the resolved promises as values. Use this in test-setups to improve the test-speed by running everything in parallel.
 
 ```javascript
 
@@ -168,9 +182,7 @@ const {
     user1: getUser();
     user2: getUser();
 });
-
 ```
-
 
 ## randomString()
 
@@ -191,7 +203,6 @@ console.log(AsyncTestUtil.randomString(
 // > 'acbcba'
 ```
 
-
 ## randomNumber()
 
 Creates a random number. Optional range can be given.
@@ -206,7 +217,6 @@ console.log(AsyncTestUtil.randomNumber(
     2000 // max-value (default=1000)
 ));
 // > 1768
-
 ```
 
 ## clone()
