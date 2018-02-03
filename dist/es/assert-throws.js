@@ -45,7 +45,7 @@ export default (function () {
                         throw new Error('\n               util.assertThrowsAsync(): Error does not contain\n               - should contain: ' + contains + '\n               - is string: ' + _context.t0.toString() + '\n             ');
 
                     case 12:
-                        return _context.abrupt('return', 'util.assertThrowsAsync(): everything is fine');
+                        return _context.abrupt('return', _context.t0);
 
                     case 13:
                         throw new Error('util.assertThrowsAsync(): Missing rejection' + (error ? ' with ' + error.name : ''));
