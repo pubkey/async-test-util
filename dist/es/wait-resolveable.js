@@ -1,4 +1,3 @@
-import _Promise from "babel-runtime/core-js/promise";
 /**
  * this returns a promise and the resolve-function
  * which can be called to resolve before the timeout has passed
@@ -8,7 +7,7 @@ export default function waitResolveable() {
     var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
 
     var ret = {};
-    ret.promise = new _Promise(function (res) {
+    ret.promise = new Promise(function (res) {
         ret.resolve = function (x) {
             return res(x);
         };

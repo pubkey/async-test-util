@@ -9,6 +9,8 @@ import runForever from './run-forever';
 import randomString from './random-string';
 import randomNumber from './random-number';
 import resolveValues from './resolve-values';
+import isPromise from './is-promise';
+import promisify from './promisify';
 
 var AsyncTestUtil = {
     assertThrows: assertThrows,
@@ -21,8 +23,10 @@ var AsyncTestUtil = {
     runForever: runForever,
     randomString: randomString,
     randomNumber: randomNumber,
-    resolveValues: resolveValues
+    resolveValues: resolveValues,
+    isPromise: isPromise,
+    promisify: promisify
 };
 export default AsyncTestUtil;
 
-export { assertThrows, clone, deepEqual, waitResolveable, waitUntil, wait, waitForever, runForever, randomString, randomNumber, resolveValues };
+export { assertThrows, clone, deepEqual, waitResolveable, waitUntil, wait, waitForever, runForever, randomString, randomNumber, resolveValues, isPromise, promisify };
