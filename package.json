@@ -1,6 +1,6 @@
 {
   "name": "async-test-util",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Util-functions that are be useful in async tests",
   "main": "./dist/lib/index.js",
   "jsnext:main": "./dist/es/index.js",
