@@ -11,5 +11,5 @@ script:
 - npm install
 - npm run lint
 - npm run build
-- npm test:node
-- npm test:browser
+- npm run test:node
+- npm run test:browser
