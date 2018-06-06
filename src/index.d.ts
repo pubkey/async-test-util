@@ -62,6 +62,13 @@ type ResolveValuesParam = {
 export function resolveValues(obj: ResolveValuesParam): Promise<ResolveValuesParam>;
 
 /**
+ * same as performance.now()
+ * But works in browsers and NodeJs
+ * @link https://developer.mozilla.org/de/docs/Web/API/Performance/now
+ */
+export function performanceNow(): Number;
+
+/**
  * returns true if a promise was given
  */
 export function isPromise(maybePromise: any): boolean;
@@ -119,7 +126,9 @@ declare const _default: {
     waitForever,
     runForever,
     randomString,
-    randomNumber
+    randomNumber,
+    resolveValues,
+    performanceNow
 };
 
 export default _default;
