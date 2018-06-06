@@ -3,16 +3,16 @@
  * but works in browsers and nodeJs
  */
 
-import * as isNode from 'is-node';
+import isNode from 'is-node';
 
 export default function performanceNow() {
     var perf = void 0;
     if (isNode) {
         var _require = require('perf_hooks'),
-            _performance = _require.performance;
+            performance = _require.performance;
 
-        perf = _performance;
-    } else perf = performance;
+        perf = performance;
+    } else perf = window.performance;
 
     return perf.now();
 }

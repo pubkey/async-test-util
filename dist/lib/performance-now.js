@@ -7,18 +7,18 @@ exports['default'] = performanceNow;
 
 var _isNode = require('is-node');
 
-var isNode = _interopRequireWildcard(_isNode);
+var _isNode2 = _interopRequireDefault(_isNode);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function performanceNow() {
     var perf = void 0;
-    if (isNode) {
+    if (_isNode2['default']) {
         var _require = require('perf_hooks'),
-            _performance = _require.performance;
+            performance = _require.performance;
 
-        perf = _performance;
-    } else perf = performance;
+        perf = performance;
+    } else perf = window.performance;
 
     return perf.now();
 } /**
