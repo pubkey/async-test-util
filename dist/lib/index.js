@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.promisify = exports.isPromise = exports.resolveValues = exports.randomNumber = exports.randomString = exports.runForever = exports.waitForever = exports.wait = exports.waitUntil = exports.waitResolveable = exports.deepEqual = exports.clone = exports.assertThrows = undefined;
+exports.promisify = exports.isPromise = exports.performanceNow = exports.resolveValues = exports.randomNumber = exports.randomString = exports.runForever = exports.waitForever = exports.wait = exports.waitUntil = exports.waitResolveable = exports.deepEqual = exports.clone = exports.assertThrows = undefined;
 
 var _assertThrows = require('./assert-throws');
 
@@ -49,6 +49,10 @@ var _resolveValues = require('./resolve-values');
 
 var _resolveValues2 = _interopRequireDefault(_resolveValues);
 
+var _performanceNow = require('./performance-now');
+
+var _performanceNow2 = _interopRequireDefault(_performanceNow);
+
 var _isPromise = require('./is-promise');
 
 var _isPromise2 = _interopRequireDefault(_isPromise);
@@ -71,6 +75,7 @@ var AsyncTestUtil = {
     randomString: _randomString2['default'],
     randomNumber: _randomNumber2['default'],
     resolveValues: _resolveValues2['default'],
+    performanceNow: _performanceNow2['default'],
     isPromise: _isPromise2['default'],
     promisify: _promisify2['default']
 };
@@ -86,5 +91,6 @@ exports.runForever = _runForever2['default'];
 exports.randomString = _randomString2['default'];
 exports.randomNumber = _randomNumber2['default'];
 exports.resolveValues = _resolveValues2['default'];
+exports.performanceNow = _performanceNow2['default'];
 exports.isPromise = _isPromise2['default'];
 exports.promisify = _promisify2['default'];
