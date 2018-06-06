@@ -4,7 +4,7 @@
  */
 
 
-import * as isNode from 'is-node';
+import isNode from 'is-node';
 
 export default function performanceNow() {
     let perf;
@@ -14,7 +14,7 @@ export default function performanceNow() {
         } = require('perf_hooks');
         perf = performance;
     } else
-        perf = performance;
+        perf = window.performance;
 
     return perf.now();
 }

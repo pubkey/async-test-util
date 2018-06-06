@@ -29,7 +29,6 @@
             "always"
         ],
         "no-console": "off",
-        "curly": ["error", "multi-or-nest"],
         "no-var": "error",
         "no-throw-literal": "error"
     }
