@@ -51,7 +51,7 @@ type waitForeverType = () => Promise<void>;
  * @return {Promise<void>}
  */
 export const assertThrows: assertThrowsType;
-type assertThrowsType = (fun: Function, error?: any, contains?: 'string') => Promise<Error | TypeError>;
+type assertThrowsType = (fun: Function, error?: any, contains?: string) => Promise<Error | TypeError>;
 /**
  * Recieves an object with promises as values. Returns ans object with the resolved promises as values.
  * @param  {Object}      obj      with promises as values
