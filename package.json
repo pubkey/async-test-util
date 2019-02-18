@@ -31,7 +31,7 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "8.2.3",
-    "babel-loader": "8.0.4",
+    "babel-loader": "8.0.5",
     "babel-plugin-transform-async-to-generator": "6.24.1",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-block-scoping": "6.26.0",
@@ -64,8 +64,8 @@
     "karma-opera-launcher": "1.0.0",
     "karma-safari-launcher": "1.0.0",
     "mocha": "5.2.0",
-    "node": "11.2.0",
-    "rimraf": "2.6.2"
+    "node": "11.10.0",
+    "rimraf": "2.6.3"
   },
   "dependencies": {
     "@types/clone": "0.1.30",
