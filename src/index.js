@@ -8,6 +8,7 @@ import waitForever from './wait-forever';
 import runForever from './run-forever';
 import randomString from './random-string';
 import randomNumber from './random-number';
+import randomBoolean from './random-boolean';
 import resolveValues from './resolve-values';
 import performanceNow from './performance-now';
 import isPromise from './is-promise';
@@ -24,6 +25,7 @@ const AsyncTestUtil = {
     runForever,
     randomString,
     randomNumber,
+    randomBoolean,
     resolveValues,
     performanceNow,
     isPromise,
@@ -42,6 +44,7 @@ export {
     runForever,
     randomString,
     randomNumber,
+    randomBoolean,
     resolveValues,
     performanceNow,
     isPromise,

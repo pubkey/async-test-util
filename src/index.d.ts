@@ -124,6 +124,13 @@ type randomStringType = (length?: number, charset?: string) => string;
 export const randomNumber: randomNumberType;
 type randomNumberType = (length?: number, charset?: string) => string;
 
+/**
+ * creates a random boolean
+ * @return {boolean}
+ */
+export const randomBoolean: randomBooleanType;
+type randomBooleanType = () => boolean;
+
 declare const _default: {
     assertThrows: assertThrowsType,
     clone: cloneType,
@@ -134,6 +141,7 @@ declare const _default: {
     runForever: runForeverType,
     randomString: randomStringType,
     randomNumber: randomNumberType,
+    randomBoolean: randomBooleanType,
     resolveValues: resolveValuesType,
     waitResolveable: waitResolveableType,
     waitUntil: waitUntilType,

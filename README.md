@@ -236,6 +236,15 @@ console.log(AsyncTestUtil.randomNumber(
 // > 1768
 ```
 
+## randomBoolean()
+
+Creates a random boolean. Returns `true` or `false`.
+
+```javascript
+console.log(AsyncTestUtil.randomBoolean());
+// > true
+```
+
 ## clone()
 
 Reference to [clone](https://www.npmjs.com/package/clone). Does exactly the same thing.
