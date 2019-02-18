@@ -8,6 +8,7 @@ import waitForever from './wait-forever';
 import runForever from './run-forever';
 import randomString from './random-string';
 import randomNumber from './random-number';
+import randomBoolean from './random-boolean';
 import resolveValues from './resolve-values';
 import performanceNow from './performance-now';
 import isPromise from './is-promise';
@@ -24,6 +25,7 @@ var AsyncTestUtil = {
     runForever: runForever,
     randomString: randomString,
     randomNumber: randomNumber,
+    randomBoolean: randomBoolean,
     resolveValues: resolveValues,
     performanceNow: performanceNow,
     isPromise: isPromise,
@@ -31,4 +33,4 @@ var AsyncTestUtil = {
 };
 export default AsyncTestUtil;
 
-export { assertThrows, clone, deepEqual, waitResolveable, waitUntil, wait, waitForever, runForever, randomString, randomNumber, resolveValues, performanceNow, isPromise, promisify };
+export { assertThrows, clone, deepEqual, waitResolveable, waitUntil, wait, waitForever, runForever, randomString, randomNumber, randomBoolean, resolveValues, performanceNow, isPromise, promisify };
