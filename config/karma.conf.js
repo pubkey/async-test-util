@@ -19,7 +19,7 @@ const configuration = {
         enabled: true,
         usePhantomJS: false,
         postDetection: function(availableBrowser) {
-            // return ['Firefox']; // comment in to test specific browser
+            return ['Chrome']; // comment in to test specific browser
             const browsers = availableBrowser
                 .filter(b => !['PhantomJS', 'FirefoxAurora', 'FirefoxNightly'].includes(b))
                 .map(b => {
@@ -53,6 +53,9 @@ const configuration = {
             bail: true,
             timeout: 12000
         }
+    },
+    webpack: {
+        mode: 'development'
     },
     browsers: ['Chrome_travis_ci'],
     browserDisconnectTimeout: 12000,

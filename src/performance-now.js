@@ -1,5 +1,7 @@
 import isNode from 'is-node';
 
+import NodeOnly from './require-on-node-only';
+
 /**
  * same as performance.now()
  * but works in browsers and nodeJs
@@ -10,7 +12,7 @@ export default function performanceNow() {
     if (isNode) {
         const {
             performance
-        } = require('perf_hooks');
+        } = NodeOnly.perfHooks;
         perf = performance;
     } else
         perf = window.performance;

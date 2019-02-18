@@ -73,5 +73,10 @@
     "clone": "2.1.2",
     "deep-equal": "1.0.1",
     "is-node": "1.0.2"
+  },
+  "browser": {
+    "./src/require-on-node-only.js": false,
+    "./dist/es/require-on-node-only.js": false,
+    "./dist/lib/require-on-node-only.js": false
   }
 }
