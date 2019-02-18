@@ -166,7 +166,6 @@ it('should have the custom error-property', async() => {
 Recieves an object with promises as values. Returns ans object with the resolved promises as values. Use this in test-setups to improve the test-speed by running everything in parallel.
 
 ```javascript
-
 // instead of this
 const database = await connectDatabase();
 const user1 = await getUser();
@@ -185,26 +184,23 @@ const {
 ```
 
 ## isPromise()
+
 Returns true if the given value is a `Promise`;
 
 ```javascript
-
 const is = AsyncTestUtil.isPromise(myAsyncFunction()); // true
 const is = AsyncTestUtil.isPromise('foobar'); // false
-
 ```
 
 ## promisify
 
 Transforms the given value to a promise if it was no promise before.
 
-``` javascript
-
+```javascript
 const ensurePromise = AsyncTestUtil.isPromise(maybeAsyncFunction());
 
 // now you are sure this is a promise
 ensurePromise.then(/* ... */)
-
 ```
 
 ## randomString()
@@ -212,7 +208,6 @@ ensurePromise.then(/* ... */)
 Creates a random string. Takes length as first parameter an custom charset as second.
 
 ```javascript
-
 console.log(AsyncTestUtil.randomString());
 // > 'rhfkx'
 
@@ -231,7 +226,6 @@ console.log(AsyncTestUtil.randomString(
 Creates a random number. Optional range can be given.
 
 ```javascript
-
 console.log(AsyncTestUtil.randomNumber());
 // > 56
 
@@ -273,5 +267,18 @@ it('the 2 objects should be equal', () => {
         level: 1
     };
     assert.ok(AsyncTestUtil.deepEqual(obj1, obj2));
+});
+```
+
+## performanceNow()
+
+Works equal to [performance.now](https://developer.mozilla.org/de/docs/Web/API/Performance/now) but works in browsers and nodeJs.
+
+```javascript
+it('should take less then 200 milliseconds', () => {
+    const now = AsyncTestUtil.performanceNow(); // in milliseconds
+    await doSomething();
+    const later = AsyncTestUtil.performanceNow(); // in milliseconds
+    assert.ok((now + 50 * 1000 ) > later);
 });
 ```

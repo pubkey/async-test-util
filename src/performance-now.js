@@ -1,11 +1,10 @@
-/**
- * same as perfommance.now()
- * but works in browsers and nodeJs
- */
-
-
 import isNode from 'is-node';
 
+/**
+ * same as performance.now()
+ * but works in browsers and nodeJs
+ * @link https://developer.mozilla.org/de/docs/Web/API/Performance/now
+ */
 export default function performanceNow() {
     let perf;
     if (isNode) {
