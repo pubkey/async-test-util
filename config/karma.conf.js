@@ -2,7 +2,6 @@ const configuration = {
     basePath: '',
     frameworks: [
         'mocha',
-        'browserify',
         'detectBrowsers'
     ],
     files: [
@@ -34,7 +33,7 @@ const configuration = {
     // Karma plugins loaded
     plugins: [
         'karma-mocha',
-        'karma-browserify',
+        'karma-webpack',
         'karma-chrome-launcher',
         'karma-edge-launcher',
         'karma-firefox-launcher',
@@ -46,7 +45,7 @@ const configuration = {
     // Source files that you wanna generate coverage for.
     // Do not include tests or libraries (these files will be instrumented by Istanbul)
     preprocessors: {
-        '../test/*.test.js': ['browserify']
+        '../test/*.test.js': ['webpack']
     },
 
     client: {
