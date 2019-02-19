@@ -122,7 +122,7 @@ type randomStringType = (length?: number, charset?: string) => string;
  * @return {number}
  */
 export const randomNumber: randomNumberType;
-type randomNumberType = (length?: number, charset?: string) => string;
+type randomNumberType = (min?: number, max?: number) => number;
 
 /**
  * creates a random boolean
