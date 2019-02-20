@@ -69,7 +69,7 @@ type resolveValuesType = (obj: ResolveValuesParam) => Promise<ResolveValuesParam
  * @link https://developer.mozilla.org/de/docs/Web/API/Performance/now
  */
 export const performanceNow: performanceNowType;
-type performanceNowType = () => Number;
+type performanceNowType = () => number;
 
 /**
  * returns true if a promise was given
