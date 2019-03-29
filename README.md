@@ -143,6 +143,13 @@ it('should throw because route does not exist', async() => {
         Error,                    // Error-type                                              (optional)
         'reachable'               // text-flag, throw if error-message does not include this (optional)  
     );
+
+    // or you can pass a string-array to ensure all is in error message
+    await AsyncTestUtil.assertThrows(
+        () => pingServer(),       // function that throws                                    (required)
+        Error,                    // Error-type                                              (optional)
+        ['route', 'reachable']    // text-flag, throw if error-message does not include this (optional)  
+    );
 });
 
 // assertThrows returns the error

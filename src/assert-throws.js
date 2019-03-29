@@ -1,5 +1,7 @@
 import isPromise from './is-promise';
-
+import {
+    oneOfArrayNotInString
+} from './utils';
 /**
  * async version of assert.throws
  * @param  {function}  test
@@ -7,7 +9,10 @@ import isPromise from './is-promise';
  * @param  {?string} [contains=''] contains
  * @return {Promise}       [description]
  */
-export default function assertThrows(test, error = Error, contains = '') {
+export default function assertThrows(test, error = Error, contains = []) {
+
+    if (!Array.isArray(contains)) contains = [contains];
+
     const shouldErrorName = typeof error === 'string' ? error : error.name;
 
     const nonThrown = new Error(
@@ -25,7 +30,8 @@ export default function assertThrows(test, error = Error, contains = '') {
              `);
         }
         // check if contains
-        if (contains != '' && !error.toString().includes(contains)) {
+        const errorString = error.toString();
+        if (contains.length > 0 && oneOfArrayNotInString(contains, errorString)) {
             return new Error(`
                util.assertThrowsAsync(): Error does not contain
                - should contain: ${contains}

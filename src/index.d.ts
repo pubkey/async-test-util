@@ -47,11 +47,11 @@ type waitForeverType = () => Promise<void>;
  * async version of assert.throws
  * @param  {Function}      fun      which should throw
  * @param  {any}           error    error-type (TypeError, Error or string)
- * @param  {string}      contains   the thrown error must contain this string
+ * @param  {string|string[]}      contains   the thrown error must contain this string or all of string-array
  * @return {Promise<void>}
  */
 export const assertThrows: assertThrowsType;
-type assertThrowsType = (fun: Function, error?: any, contains?: string) => Promise<Error | TypeError>;
+type assertThrowsType = (fun: Function, error?: any, contains?: string | string[]) => Promise<Error | TypeError>;
 /**
  * Recieves an object with promises as values. Returns ans object with the resolved promises as values.
  * @param  {Object}      obj      with promises as values

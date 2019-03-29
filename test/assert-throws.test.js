@@ -138,4 +138,32 @@ describe('assert-throws.test.js', () => {
         );
         assert.equal(ret.foo, 'bar');
     });
+    it('should compare all in string-array', async () => {
+        const test = async function() {
+            await AsyncTestUtil.wait(1);
+            throw new Error('one foobar two');
+        };
+        await AsyncTestUtil.assertThrows(
+            test,
+            Error,
+            ['one', 'two']
+        );
+    });
+    it('should throw if only one matches', async () => {
+        const test = async function() {
+            await AsyncTestUtil.wait(1);
+            throw new Error('foobar two');
+        };
+        let thrown = false;
+        try {
+            await AsyncTestUtil.assertThrows(
+                test,
+                Error,
+                ['one', 'two']
+            );
+        } catch (e) {
+            thrown = true;
+        }
+        assert.ok(thrown);
+    });
 });
