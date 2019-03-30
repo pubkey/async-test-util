@@ -9,6 +9,8 @@ var _isPromise = require('./is-promise');
 
 var _isPromise2 = _interopRequireDefault(_isPromise);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 /**
@@ -20,7 +22,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  */
 function assertThrows(test) {
     var error = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Error;
-    var contains = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+    var contains = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+
+    if (!Array.isArray(contains)) contains = [contains];
 
     var shouldErrorName = typeof error === 'string' ? error : error.name;
 
@@ -31,7 +36,8 @@ function assertThrows(test) {
             return new Error('\n             util.assertThrowsAsync(): Wrong Error-type\n             - is    : ' + error.constructor.name + '\n             - should: ' + shouldErrorName + '\n             - error: ' + error.toString() + '\n             ');
         }
         // check if contains
-        if (contains != '' && !error.toString().includes(contains)) {
+        var errorString = error.toString();
+        if (contains.length > 0 && (0, _utils.oneOfArrayNotInString)(contains, errorString)) {
             return new Error('\n               util.assertThrowsAsync(): Error does not contain\n               - should contain: ' + contains + '\n               - is string: ' + error.toString() + '\n             ');
         }
         return false;
