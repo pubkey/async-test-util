@@ -114,7 +114,7 @@ it('should run forever', async() => {
 
 ## assertThrows()
 
-Async-Form of [assert.throws](https://nodejs.org/api/assert.html#assert_assert_throws_block_error_message). Asserts that the given function throws with the defined error, throws if not.
+Async-Form of [assert.throws](https://nodejs.org/api/assert.html#assert_assert_throws_fn_error_message). Asserts that the given function throws with the defined error, throws if not.
 
 ```javascript
 // with error-type
