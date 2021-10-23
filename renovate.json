@@ -3,20 +3,12 @@
     "config:base"
   ],
   "statusCheckVerify": true,
-  "ignoreDeps": [
-  ],
+  "ignoreDeps": [],
   "automerge": true,
   "major": {
     "automerge": true
   },
-  "ignorePaths": [
-    "docs-src/files/logo/package.json",
-    "docs/files/files/logo/package.json",
-    "docs/files/logo/package.json",
-    "examples/ionic2/package.json",
-    "examples/electron/package.json",
-    "examples/electron-remote/package.json"
-  ],
+  "ignorePaths": [],
   "rebaseStalePrs": true,
   "prHourlyLimit": 2,
   "prCreation": "not-pending",
