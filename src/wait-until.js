@@ -10,27 +10,36 @@ export default function waitUntil(fun, timeout = 0, interval = 20) {
     let timedOut = false;
     let ok = false;
 
-    if (timeout !== 0)
+    if (timeout !== 0) {
         wait(timeout).then(() => timedOut = true);
+    }
+
 
     return new Promise((resolve, reject) => {
-        const runLoop = () => {
+
+        /**
+         * @recursive
+         * @return {Promise<void>}
+         */
+        function runLoopOnce() {
             if (ok) {
                 resolve();
-                return;
-            }
-            if (timedOut) {
+            } else if (timedOut) {
                 reject(new Error('AsyncTestUtil.waitUntil(): reached timeout of ' + timeout + 'ms'));
-                return;
+            } else {
+                return wait(interval)
+                    .then(() => promisify(fun()))
+                    /**
+                     * Propagate errors of the fun function
+                     * upwards.
+                     */
+                    .catch(err => reject(err))
+                    .then(value => {
+                        ok = value;
+                        return runLoopOnce();
+                    })
             }
-            wait(interval).then(() => {
-                const value = promisify(fun());
-                value.then(val => {
-                    ok = val;
-                    runLoop();
-                });
-            });
-        };
-        runLoop();
+        }
+        runLoopOnce();
     });
 }
