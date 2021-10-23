@@ -37,7 +37,7 @@ export default function waitUntil(fun, timeout = 0, interval = 20) {
                     .then(value => {
                         ok = value;
                         return runLoopOnce();
-                    })
+                    });
             }
         }
         runLoopOnce();
