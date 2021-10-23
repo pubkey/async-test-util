@@ -43,7 +43,7 @@ describe('wait-until.test.js', () => {
         await AsyncTestUtil.waitUntil(fun, 100);
         await AsyncTestUtil.wait(300);
     });
-    it('should propagate error upwards', async () => {
+    it('should propagate errors upwards', async () => {
         const fun = async function () {
             await AsyncTestUtil.wait(10);
             throw new Error('error');
