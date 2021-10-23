@@ -27,28 +27,39 @@ function waitUntil(fun) {
     var timedOut = false;
     var ok = false;
 
-    if (timeout !== 0) (0, _wait2['default'])(timeout).then(function () {
-        return timedOut = true;
-    });
+    if (timeout !== 0) {
+        (0, _wait2['default'])(timeout).then(function () {
+            return timedOut = true;
+        });
+    }
 
     return new Promise(function (resolve, reject) {
-        var runLoop = function runLoop() {
+
+        /**
+         * @recursive
+         * @return {Promise<void>}
+         */
+        function runLoopOnce() {
             if (ok) {
                 resolve();
-                return;
-            }
-            if (timedOut) {
+            } else if (timedOut) {
                 reject(new Error('AsyncTestUtil.waitUntil(): reached timeout of ' + timeout + 'ms'));
-                return;
-            }
-            (0, _wait2['default'])(interval).then(function () {
-                var value = (0, _promisify2['default'])(fun());
-                value.then(function (val) {
-                    ok = val;
-                    runLoop();
+            } else {
+                return (0, _wait2['default'])(interval).then(function () {
+                    return (0, _promisify2['default'])(fun());
+                })
+                /**
+                 * Propagate errors of the fun function
+                 * upwards.
+                 */
+                ['catch'](function (err) {
+                    return reject(err);
+                }).then(function (value) {
+                    ok = value;
+                    return runLoopOnce();
                 });
-            });
-        };
-        runLoop();
+            }
+        }
+        runLoopOnce();
     });
 }

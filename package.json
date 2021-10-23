@@ -1,6 +1,6 @@
 {
   "name": "async-test-util",
-  "version": "1.7.3",
+  "version": "2.0.0",
   "description": "Util-functions that are be useful in async tests",
   "keywords": [
     "async",
