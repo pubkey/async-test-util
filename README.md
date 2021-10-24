@@ -52,7 +52,7 @@ it('should wait until server is online', async() => {
         try{
             await fetch('http://example.com/api/');
             return true;
-        }catch(){
+        }catch(err) {
             return false;
         }
     };
@@ -68,7 +68,7 @@ it('should wait until server is online (maxtime: 1000ms)', async() => {
         try{
             await fetch('http://example.com/api/');
             return true;
-        }catch(){
+        }catch(err) {
             return false;
         }
     };
@@ -134,7 +134,7 @@ it('should throw because route does not exist', async() => {
     const pingServer = async() => {
         try{
             await fetch('http://example.com/foobar/');            
-        }catch(err){
+        }catch(err) {
             throw new Error('route not reachable');
         }
     };
