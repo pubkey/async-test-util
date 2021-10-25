@@ -60,7 +60,7 @@
     "babel-preset-es2016": "6.24.1",
     "babel-preset-es2017": "6.24.1",
     "babel-preset-latest": "6.24.1",
-    "cross-env": "5.2.1",
+    "cross-env": "7.0.3",
     "eslint": "5.16.0",
     "karma": "4.0.1",
     "karma-babel-preprocessor": "8.0.1",
