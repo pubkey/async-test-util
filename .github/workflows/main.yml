@@ -21,7 +21,7 @@ jobs:
           node-version: 16.5.0
 
       - name: Reuse npm cache folder
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
