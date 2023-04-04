@@ -1,5 +1,3 @@
-import wait from './wait';
-
 /**
  * waits forever
  * @return {Promise}

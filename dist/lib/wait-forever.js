@@ -1,16 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = waitForever;
-
-var _wait = require('./wait');
-
-var _wait2 = _interopRequireDefault(_wait);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+exports["default"] = waitForever;
 /**
  * waits forever
  * @return {Promise}

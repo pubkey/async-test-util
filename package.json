@@ -1,6 +1,6 @@
 {
   "name": "async-test-util",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Util-functions that are be useful in async tests",
   "keywords": [
     "async",
@@ -75,7 +75,6 @@
     "karma-safari-launcher": "1.0.0",
     "karma-webpack": "5.0.0",
     "mocha": "10.2.0",
-    "node": "16.20.0",
     "rimraf": "4.4.1",
     "webpack": "4.46.0"
   },
