@@ -1,3 +1,5 @@
+
+const webpack = require('webpack');
 const configuration = {
     basePath: '',
     frameworks: [
@@ -18,7 +20,7 @@ const configuration = {
     detectBrowsers: {
         enabled: true,
         usePhantomJS: false,
-        postDetection: function(availableBrowser) {
+        postDetection: function (availableBrowser) {
             return ['Chrome']; // comment in to test specific browser
             const browsers = availableBrowser
                 .filter(b => !['PhantomJS', 'FirefoxAurora', 'FirefoxNightly'].includes(b))
@@ -55,7 +57,13 @@ const configuration = {
         }
     },
     webpack: {
-        mode: 'development'
+        mode: 'development',
+        plugins: [
+            // fix "process is not defined" error:
+            new webpack.ProvidePlugin({
+                process: 'process/browser',
+            }),
+        ]
     },
     browsers: ['Chrome_travis_ci'],
     browserDisconnectTimeout: 12000,
@@ -78,6 +86,6 @@ if (process.env.TRAVIS) {
     // configuration.reporters = [];
 }
 
-module.exports = function(config) {
+module.exports = function (config) {
     config.set(configuration);
 };
