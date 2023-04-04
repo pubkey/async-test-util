@@ -1,3 +1,5 @@
+import { ensureInSetTimeoutLimit } from './utils';
+
 /**
  * this returns a promise and the resolve-function
  * which can be called to resolve before the timeout has passed
@@ -7,7 +9,7 @@ export default function waitResolveable(ms = 0) {
     const ret = {};
     ret.promise = new Promise(res => {
         ret.resolve = (x) => res(x);
-        setTimeout(res, ms);
+        setTimeout(res, ensureInSetTimeoutLimit(ms));
     });
     return ret;
 }
