@@ -11,4 +11,9 @@ describe('promisify.test.js', () => {
         const ret = AsyncTestUtil.promisify(undefined);
         assert.ok(ret instanceof Promise);
     });
+    it('should return the same promise when a promise given', () => {
+        const p = Promise.resolve();
+        const ret = AsyncTestUtil.promisify(p);
+        assert.ok(p === ret);
+    });
 });
