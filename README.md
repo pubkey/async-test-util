@@ -204,7 +204,7 @@ const is = AsyncTestUtil.isPromise('foobar'); // false
 Transforms the given value to a promise if it was no promise before.
 
 ```javascript
-const ensurePromise = AsyncTestUtil.isPromise(maybeAsyncFunction());
+const ensurePromise = AsyncTestUtil.promisify(maybeAsyncFunction());
 
 // now you are sure this is a promise
 ensurePromise.then(/* ... */)
