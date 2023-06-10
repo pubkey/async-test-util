@@ -6,10 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.oneOfArrayNotInString = oneOfArrayNotInString;
 exports.ensureInSetTimeoutLimit = ensureInSetTimeoutLimit;
 function oneOfArrayNotInString(stringAr, str) {
-    var foundNotInString = stringAr.find(function (sub) {
+    return !!stringAr.find(function (sub) {
         return !str.includes(sub);
     });
-    if (foundNotInString) return true;else return false;
 }
 
 var TIMEOUT_MAX = exports.TIMEOUT_MAX = 2147483647;
