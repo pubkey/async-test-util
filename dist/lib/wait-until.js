@@ -41,7 +41,7 @@ function waitUntil(fun) {
          */
         function runLoopOnce() {
             if (ok) {
-                resolve();
+                resolve(ok);
             } else if (timedOut) {
                 reject(new Error('AsyncTestUtil.waitUntil(): reached timeout of ' + timeout + 'ms'));
             } else {
