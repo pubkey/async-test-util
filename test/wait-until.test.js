@@ -56,4 +56,12 @@ describe('wait-until.test.js', () => {
         }
         assert.ok(hasThrown);
     });
+    it('should returns the truthy value', async () => {
+        const fun = async function () {
+            await AsyncTestUtil.wait(100);
+            return 'foobar';
+        };
+        const value = await AsyncTestUtil.waitUntil(fun, 100);
+        assert.strictEqual(value, 'foobar');
+    });
 });

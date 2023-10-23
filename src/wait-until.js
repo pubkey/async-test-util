@@ -23,7 +23,7 @@ export default function waitUntil(fun, timeout = 0, interval = 20) {
          */
         function runLoopOnce() {
             if (ok) {
-                resolve();
+                resolve(ok);
             } else if (timedOut) {
                 reject(new Error('AsyncTestUtil.waitUntil(): reached timeout of ' + timeout + 'ms'));
             } else {

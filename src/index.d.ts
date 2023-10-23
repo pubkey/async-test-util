@@ -1,3 +1,7 @@
+
+export type MaybePromise<T> = T | Promise<T>;
+
+
 /**
  * waits until the given time has passed, then resolved
  * @param  {number}        [time=0] time in ms (optional)
@@ -25,7 +29,7 @@ type waitResolveableType = (time?: number) => waitResolveableState;
  * @return {Promise<void>}
  */
 export const waitUntil: waitUntilType;
-type waitUntilType = (predicate: Function, timeout?: number, interval?: number) => Promise<void>;
+type waitUntilType<T = void> = (predicate: () => MaybePromise<T>, timeout?: number, interval?: number) => Promise<T>;
 
 /**
  * runs the given predicate-function forever

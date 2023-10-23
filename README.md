@@ -44,7 +44,7 @@ it('should wait until observable fired or time is over', async() => {
 
 ## waitUntil()
 
-Waits until the given predicate-function returns true. Throws if the optional timeout has passed before.
+Waits until the given predicate-function returns a truthy value. Throws if the optional timeout has passed before.
 
 ```javascript
 it('should wait until server is online', async() => {
@@ -73,6 +73,23 @@ it('should wait until server is online (maxtime: 1000ms)', async() => {
         }
     };
     await AsyncTestUtil.waitUntil(checkServer, 1000);
+});
+```
+
+
+With return value:
+
+```javascript
+it('should wait until server is online (maxtime: 1000ms)', async() => {
+    const checkServer = async() => {
+        try{
+            const response = await fetch('http://example.com/api/');
+            return await response.json();
+        }catch(err) {
+            return false;
+        }
+    };
+    const firstSuccessfullResponse = await AsyncTestUtil.waitUntil(checkServer, 1000);
 });
 ```
 
