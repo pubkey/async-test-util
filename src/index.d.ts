@@ -29,7 +29,7 @@ type waitResolveableType = (time?: number) => waitResolveableState;
  * @return {Promise<void>}
  */
 export const waitUntil: waitUntilType;
-type waitUntilType<T = void> = (predicate: () => MaybePromise<T>, timeout?: number, interval?: number) => Promise<T>;
+type waitUntilType<T = any> = (predicate: () => MaybePromise<T>, timeout?: number, interval?: number) => Promise<T>;
 
 /**
  * runs the given predicate-function forever
