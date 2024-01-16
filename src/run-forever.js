@@ -3,7 +3,7 @@ import promisify from './promisify';
 
 export default function runForever(predicate, interval = 100) {
     let t = 1; // trick optimizers
-    return new Promise(res => {
+    return new Promise(() => {
         const runLoop = () => {
             t++;
             const val = promisify(predicate());
@@ -11,6 +11,6 @@ export default function runForever(predicate, interval = 100) {
                 .then(() => wait(interval))
                 .then(() => runLoop());
         };
-        runLoop();
+        runLoop(t);
     });
 }
