@@ -1,13 +1,9 @@
-'use strict';
+"use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _deepEqual = require('deep-equal');
-
-var _deepEqual2 = _interopRequireDefault(_deepEqual);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-exports['default'] = _deepEqual2['default'];
+exports["default"] = void 0;
+var _deepEqual = _interopRequireDefault(require("deep-equal"));
+var _default = exports["default"] = _deepEqual["default"];

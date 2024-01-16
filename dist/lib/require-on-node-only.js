@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports["default"] = void 0;
 var perfHooks = require('perf_hooks');
-
 var _default = {
-    perfHooks: perfHooks
+  perfHooks: perfHooks
 };
-
-exports['default'] = _default;
+var _default2 = exports["default"] = _default;

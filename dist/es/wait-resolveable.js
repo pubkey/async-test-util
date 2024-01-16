@@ -6,14 +6,13 @@ import { ensureInSetTimeoutLimit } from './utils';
  * @param  {Number}  [ms=0] [description]
  */
 export default function waitResolveable() {
-    var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-    var ret = {};
-    ret.promise = new Promise(function (res) {
-        ret.resolve = function (x) {
-            return res(x);
-        };
-        setTimeout(res, ensureInSetTimeoutLimit(ms));
-    });
-    return ret;
+  var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var ret = {};
+  ret.promise = new Promise(function (res) {
+    ret.resolve = function (x) {
+      return res(x);
+    };
+    setTimeout(res, ensureInSetTimeoutLimit(ms));
+  });
+  return ret;
 }

@@ -7,11 +7,11 @@ import isPromise from './is-promise';
  * @return {Promise}
  */
 export default function promisify(value) {
-    if (isPromise(value)) {
-        // is promise
-        return value;
-    } else {
-        // is non-promise
-        return Promise.resolve(value);
-    }
+  if (isPromise(value)) {
+    // is promise
+    return value;
+  } else {
+    // is non-promise
+    return Promise.resolve(value);
+  }
 }

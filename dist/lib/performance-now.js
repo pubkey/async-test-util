@@ -1,32 +1,22 @@
-'use strict';
+"use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports['default'] = performanceNow;
-
-var _isNode = require('is-node');
-
-var _isNode2 = _interopRequireDefault(_isNode);
-
-var _requireOnNodeOnly = require('./require-on-node-only');
-
-var _requireOnNodeOnly2 = _interopRequireDefault(_requireOnNodeOnly);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+exports["default"] = performanceNow;
+var _isNode = _interopRequireDefault(require("is-node"));
+var _requireOnNodeOnly = _interopRequireDefault(require("./require-on-node-only"));
 /**
  * same as performance.now()
  * but works in browsers and nodeJs
  * @link https://developer.mozilla.org/de/docs/Web/API/Performance/now
  */
 function performanceNow() {
-    var perf = void 0;
-    if (_isNode2['default']) {
-        var performance = _requireOnNodeOnly2['default'].perfHooks.performance;
-
-        perf = performance;
-    } else perf = window.performance;
-
-    return perf.now();
+  var perf;
+  if (_isNode["default"]) {
+    var performance = _requireOnNodeOnly["default"].perfHooks.performance;
+    perf = performance;
+  } else perf = window.performance;
+  return perf.now();
 }

@@ -1,16 +1,11 @@
-'use strict';
+"use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports['default'] = promisify;
-
-var _isPromise = require('./is-promise');
-
-var _isPromise2 = _interopRequireDefault(_isPromise);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+exports["default"] = promisify;
+var _isPromise = _interopRequireDefault(require("./is-promise"));
 /**
  * takes promise or non-promise,
  * returns promise
@@ -18,11 +13,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  * @return {Promise}
  */
 function promisify(value) {
-    if ((0, _isPromise2['default'])(value)) {
-        // is promise
-        return value;
-    } else {
-        // is non-promise
-        return Promise.resolve(value);
-    }
+  if ((0, _isPromise["default"])(value)) {
+    // is promise
+    return value;
+  } else {
+    // is non-promise
+    return Promise.resolve(value);
+  }
 }
