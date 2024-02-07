@@ -3,7 +3,7 @@ import promisify from './promisify';
 export default function runForever(predicate) {
   var interval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
   var t = 1; // trick optimizers
-  return new Promise(function (res) {
+  return new Promise(function () {
     var runLoop = function runLoop() {
       t++;
       var val = promisify(predicate());
@@ -13,6 +13,6 @@ export default function runForever(predicate) {
         return runLoop();
       });
     };
-    runLoop();
+    runLoop(t);
   });
 }

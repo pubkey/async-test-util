@@ -10,7 +10,7 @@ var _promisify = _interopRequireDefault(require("./promisify"));
 function runForever(predicate) {
   var interval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
   var t = 1; // trick optimizers
-  return new Promise(function (res) {
+  return new Promise(function () {
     var runLoop = function runLoop() {
       t++;
       var val = (0, _promisify["default"])(predicate());
@@ -20,6 +20,6 @@ function runForever(predicate) {
         return runLoop();
       });
     };
-    runLoop();
+    runLoop(t);
   });
 }
