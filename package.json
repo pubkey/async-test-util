@@ -44,7 +44,6 @@
   },
   "homepage": "https://github.com/pubkey/async-test-util#readme",
   "devDependencies": {
-    "assert": "2.1.0",
     "@babel/cli": "7.23.9",
     "@babel/core": "7.23.9",
     "@babel/plugin-external-helpers": "7.23.3",
@@ -62,6 +61,7 @@
     "@babel/preset-env": "7.23.9",
     "@babel/preset-typescript": "7.23.3",
     "@babel/types": "7.23.9",
+    "assert": "2.1.0",
     "cross-env": "7.0.3",
     "eslint": "8.56.0",
     "karma": "6.4.2",
@@ -82,6 +82,7 @@
     "webpack": "5.90.1"
   },
   "dependencies": {
+    "@babel/runtime": "7.23.9",
     "@types/clone": "2.1.4",
     "clone": "2.1.2",
     "deep-equal": "2.2.3",
