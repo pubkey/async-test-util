@@ -3,7 +3,7 @@ const AsyncTestUtil = require('../dist/lib/index');
 
 describe('assert-throws.test.js', () => {
     it('valid if function throws', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             throw new Error('foo');
         };
@@ -13,7 +13,7 @@ describe('assert-throws.test.js', () => {
         );
     });
     it('valid if non-async-function throws', async () => {
-        const test = function() {
+        const test = function () {
             throw new Error('foo');
         };
         await AsyncTestUtil.assertThrows(
@@ -22,7 +22,7 @@ describe('assert-throws.test.js', () => {
         );
     });
     it('throw if function does not throw', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             return 1;
         };
@@ -38,7 +38,7 @@ describe('assert-throws.test.js', () => {
         assert.ok(thrown);
     });
     it('throw if no TypeError', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             throw new Error('foo');
         };
@@ -54,7 +54,7 @@ describe('assert-throws.test.js', () => {
         assert.ok(thrown);
     });
     it('throw if no Error', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             throw new TypeError('foo');
         };
@@ -70,7 +70,7 @@ describe('assert-throws.test.js', () => {
         assert.ok(thrown);
     });
     it('throw if not contains', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             throw new TypeError('foo');
         };
@@ -87,7 +87,7 @@ describe('assert-throws.test.js', () => {
         assert.ok(thrown);
     });
     it('dont throw if contains', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             throw new Error('foobar');
         };
@@ -138,8 +138,29 @@ describe('assert-throws.test.js', () => {
         );
         assert.equal(ret.foo, 'bar');
     });
+    it('should contain the stack trace if wrong error type', async () => {
+        const throwingFunction = async () => {
+            await Promise.resolve();
+            const error = new Error('foobar');
+            error.foo = 'bar';
+            throw error;
+        };
+        // via class
+        let hasThrown = false;
+        try {
+            await AsyncTestUtil.assertThrows(
+                () => throwingFunction(),
+                'WrongErrorType',
+                'foobar'
+            );
+        } catch (err) {
+            assert.ok(err.message.includes('assert-throws.test.js'));
+            hasThrown = true;
+        }
+        assert.ok(hasThrown);
+    });
     it('should compare all in string-array', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             throw new Error('one foobar two');
         };
@@ -150,7 +171,7 @@ describe('assert-throws.test.js', () => {
         );
     });
     it('should throw if only one matches', async () => {
-        const test = async function() {
+        const test = async function () {
             await AsyncTestUtil.wait(1);
             throw new Error('foobar two');
         };

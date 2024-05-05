@@ -27,6 +27,7 @@ export default function assertThrows(test, error = Error, contains = []) {
              - is    : ${error.constructor.name}
              - should: ${shouldErrorName}
              - error: ${error.toString()}
+             - stack: ${error.stack}
              `);
         }
         // check if contains
