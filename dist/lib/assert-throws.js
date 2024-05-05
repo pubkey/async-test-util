@@ -23,7 +23,7 @@ function assertThrows(test) {
   var ensureErrorMatches = function ensureErrorMatches(error) {
     // wrong type
     if (error.constructor.name != shouldErrorName) {
-      return new Error("\n             util.assertThrowsAsync(): Wrong Error-type\n             - is    : " + error.constructor.name + "\n             - should: " + shouldErrorName + "\n             - error: " + error.toString() + "\n             ");
+      return new Error("\n             util.assertThrowsAsync(): Wrong Error-type\n             - is    : " + error.constructor.name + "\n             - should: " + shouldErrorName + "\n             - error: " + error.toString() + "\n             - stack: " + error.stack + "\n             ");
     }
     // check if contains
     var errorString = error.toString();
