@@ -76,7 +76,7 @@
     "karma-opera-launcher": "1.0.0",
     "karma-safari-launcher": "1.0.0",
     "karma-webpack": "5.0.1",
-    "mocha": "10.7.3",
+    "mocha": "10.8.2",
     "process": "0.11.10",
     "rimraf": "6.0.1",
     "webpack": "5.95.0"
