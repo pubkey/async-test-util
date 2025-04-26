@@ -86,7 +86,7 @@
     "@types/clone": "2.1.4",
     "clone": "2.1.2",
     "deep-equal": "2.2.3",
-    "is-node": "1.0.2"
+    "is-node": "1.1.1"
   },
   "browser": {
     "./src/require-on-node-only.js": false,
