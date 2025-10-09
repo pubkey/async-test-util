@@ -79,7 +79,7 @@
     "mocha": "11.7.4",
     "process": "0.11.10",
     "rimraf": "6.0.1",
-    "webpack": "5.102.0"
+    "webpack": "5.102.1"
   },
   "dependencies": {
     "@babel/runtime": "7.28.4",
