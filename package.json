@@ -63,7 +63,7 @@
     "@babel/types": "7.29.0",
     "assert": "2.1.0",
     "cross-env": "10.1.0",
-    "eslint": "8.57.1",
+    "eslint": "10.0.1",
     "karma": "6.4.4",
     "karma-babel-preprocessor": "8.0.2",
     "karma-chrome-launcher": "3.2.0",
